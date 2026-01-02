@@ -1,0 +1,52 @@
+<form class="space-y-4 bg-brand-white border border-texas-gold/50 rounded-2xl p-6 shadow" method="post">
+  <p class="text-sm text-steel">No spam. No pressure. Just an honest report.</p>
+  <div class="grid md:grid-cols-2 gap-4">
+    <label class="flex flex-col text-sm font-medium">Full Name*
+      <input name="full_name" required class="mt-1 rounded-lg border border-steel/30 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-texas-gold" placeholder="Taylor Ramirez" />
+    </label>
+    <label class="flex flex-col text-sm font-medium">Phone*
+      <input name="phone" required type="tel" class="mt-1 rounded-lg border border-steel/30 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-texas-gold" placeholder="(555) 123-4567" />
+    </label>
+    <label class="flex flex-col text-sm font-medium">Email*
+      <input name="email" required type="email" class="mt-1 rounded-lg border border-steel/30 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-texas-gold" placeholder="you@example.com" />
+    </label>
+    <label class="flex flex-col text-sm font-medium">Address*
+      <input name="address" required class="mt-1 rounded-lg border border-steel/30 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-texas-gold" placeholder="123 Lone Star Ln" />
+    </label>
+    <label class="flex flex-col text-sm font-medium md:col-span-2">Average Monthly Bill
+      <input name="avg_monthly_bill" class="mt-1 rounded-lg border border-steel/30 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-texas-gold" placeholder="$200" />
+    </label>
+    <label class="flex flex-col text-sm font-medium">Interest*
+      <select name="interest" required class="mt-1 rounded-lg border border-steel/30 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-texas-gold">
+        <option>Solar</option>
+        <option>Battery</option>
+        <option>Solar+Battery</option>
+        <option>Service</option>
+      </select>
+    </label>
+    <label class="flex flex-col text-sm font-medium md:col-span-2">Message
+      <textarea name="message" rows="3" class="mt-1 rounded-lg border border-steel/30 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-texas-gold" placeholder="Tell us about your goals"></textarea>
+    </label>
+  </div>
+  <div class="grid gap-2">
+    {['utm_source','utm_medium','utm_campaign','utm_term','utm_content','referrer','page_path'].map((key) => (
+      <input type="hidden" name={key} value="" />
+    ))}
+  </div>
+  <button type="submit" class="inline-flex justify-center items-center bg-solar-blue text-brand-white px-5 py-3 rounded-full font-semibold hover:bg-texas-gold hover:text-ink">Request My Report</button>
+  <!-- TODO: Connect to submission endpoint -->
+</form>
+<script>
+  if (typeof window !== 'undefined') {
+    const params = new URLSearchParams(window.location.search);
+    const form = document.currentScript?.previousElementSibling;
+    const hiddenFields = form?.querySelectorAll('input[type="hidden"]');
+    const path = window.location.pathname;
+    const ref = document.referrer;
+    hiddenFields?.forEach((input) => {
+      if (!input.name) return;
+      const val = params.get(input.name) || (input.name === 'page_path' ? path : input.name === 'referrer' ? ref : '');
+      input.value = val;
+    });
+  }
+</script>

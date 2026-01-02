@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SEO from '../components/SEO.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Section from '../components/Section.astro';
+import CTAButton from '../components/CTAButton.astro';
+---
+<BaseLayout>
+  <SEO slot="head" title="Why EarthSmart | Craftsmanship-first solar" description="Family-owned solar + storage installs with support that shows up." canonical="/why-earthsmart" />
+  <Header />
+  <Section kicker="Family owned" title="Texas pride in every install">
+    <p class="text-steel max-w-3xl">EarthSmart Solar is family-owned and values-first. We treat every home like our own, with tidy conduit runs, clean wiring, and systems that perform when you need them most.</p>
+  </Section>
+  <Section title="Craftsmanship & pride">
+    <div class="grid md:grid-cols-3 gap-6">
+      {["Design rooted in your goals","Permits handled without headaches","Installation that respects your home"].map((item) => (
+        <div class="bg-brand-white border border-texas-gold/50 rounded-2xl p-5 shadow-sm" key={item}>
+          <h3 class="font-display text-xl text-solar-blue">{item}</h3>
+          <p class="text-sm text-steel mt-2">We sweat the details so your system is dependable, tidy, and built for decades.</p>
+        </div>
+      ))}
+    </div>
+  </Section>
+  <Section title="After-install support promise">
+    <p class="text-steel max-w-2xl">We pick up the phone. Monitoring, maintenance, and service calls are part of how we stand behind our work. Your investment gets a partner, not a handoff.</p>
+  </Section>
+  <Section title="What you get">
+    <ul class="space-y-3 text-steel">
+      <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-texas-gold"></span>Custom design for your roof and usage</li>
+      <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-texas-gold"></span>Permitting and interconnection handled</li>
+      <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-texas-gold"></span>Installation by licensed, insured crews</li>
+      <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-texas-gold"></span>Monitoring and support after the switch is flipped</li>
+    </ul>
+  </Section>
+  <Section title="Texans we’ve powered">
+    <div class="grid md:grid-cols-2 gap-4">
+      {[1,2].map((num) => (
+        <div class="bg-brand-white border border-texas-gold/40 rounded-2xl p-5 shadow-sm" key={num}>
+          <p class="font-semibold text-solar-blue">Customer Story {num}</p>
+          <p class="text-sm text-steel mt-2">“Placeholder testimonial about reliability, craftsmanship, and service that showed up when it mattered.”</p>
+        </div>
+      ))}
+    </div>
+  </Section>
+  <Section>
+    <div class="bg-solar-blue text-brand-white rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div>
+        <p class="text-sm uppercase tracking-[0.18em] text-sun font-semibold">Let’s build your plan</p>
+        <h3 class="font-display text-3xl">Solar + storage with service that sticks around</h3>
+        <p class="text-sand/80 mt-2">Talk with a local team that answers the call.</p>
+      </div>
+      <CTAButton href="/contact" variant="secondary">Talk with the team</CTAButton>
+    </div>
+  </Section>
+  <Footer />
+</BaseLayout>

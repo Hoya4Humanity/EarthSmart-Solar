@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SEO from '../components/SEO.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Section from '../components/Section.astro';
+import IntakeForm from '../components/forms/IntakeForm.astro';
+import ServiceForm from '../components/forms/ServiceForm.astro';
+---
+<BaseLayout>
+  <SEO slot="head" title="Contact EarthSmart Solar" description="Request your solar potential report or service visit." canonical="/contact" />
+  <Header />
+  <Section kicker="Talk with the team" title="Request your solar potential report">
+    <div class="grid md:grid-cols-2 gap-10 items-start">
+      <IntakeForm />
+      <div class="space-y-4 text-steel">
+        <p>No spam promise. We respect your inbox and your time.</p>
+        <p>Phone: (000) 000-0000</p>
+        <p>Email: hello@earthsmartsolar.com</p>
+        <p>Service Areas: Greater Houston, Central Texas, DFW Metro</p>
+      </div>
+    </div>
+  </Section>
+  <Section title="Need service?">
+    <div class="grid md:grid-cols-2 gap-10 items-start">
+      <ServiceForm />
+      <div class="space-y-3 text-steel">
+        <p>We support systems we install and those that need a rescue. Describe the issue and we’ll respond quickly.</p>
+      </div>
+    </div>
+  </Section>
+  <Footer />
+</BaseLayout>

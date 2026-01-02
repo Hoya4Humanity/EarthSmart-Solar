@@ -1,0 +1,20 @@
+---
+import CTAButton from './CTAButton.astro';
+---
+<header class="bg-brand-white/70 backdrop-blur sticky top-0 z-30 border-b border-texas-gold/40">
+  <div class="container-shell flex items-center justify-between py-4">
+    <a href="/" class="flex items-center gap-2 font-display text-xl tracking-wide text-solar-blue">
+      <span>EarthSmart Solar</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+      <a class="hover:text-texas-gold" href="/">Home</a>
+      <a class="hover:text-texas-gold" href="/solar-battery">Solar + Battery</a>
+      <a class="hover:text-texas-gold" href="/why-earthsmart">Why EarthSmart</a>
+      <a class="hover:text-texas-gold" href="/texas">Texas</a>
+      <a class="hover:text-texas-gold" href="/contact">Contact</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <CTAButton href="/contact" variant="primary">Get Report</CTAButton>
+    </div>
+  </div>
+</header>

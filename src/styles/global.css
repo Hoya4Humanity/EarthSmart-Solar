@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-solar-blue: #123A66;
+  --color-steel: #2A2F36;
+  --color-texas-gold: #D8A23B;
+  --color-sand: #F4EBDD;
+  --color-sun: #FFB454;
+  --color-ink: #0B0F14;
+  --color-white: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-sand);
+  color: var(--color-ink);
+  font-family: 'Inter', system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--color-solar-blue);
+}
+
+a:hover {
+  color: var(--color-texas-gold);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-texas-gold);
+  outline-offset: 3px;
+}
+
+.container-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.section-padding {
+  padding: 4rem 0;
+}
+
+.bg-grid {
+  background-image: radial-gradient(circle at 1px 1px, rgba(18, 58, 102, 0.08) 1px, transparent 0);
+  background-size: 22px 22px;
+}

@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SEO from '../components/SEO.astro';
+import CampaignForm from '../components/forms/CampaignForm.astro';
+import TrustBar from '../components/TrustBar.astro';
+---
+<BaseLayout>
+  <SEO slot="head" title="Texas Solar + Battery Campaign" description="POWER YOUR FREEDOM with EarthSmart Solar. No spam. No pressure. Just answers." canonical="/texas" />
+  <header class="bg-brand-white border-b border-texas-gold/40">
+    <div class="container-shell flex items-center justify-between py-4">
+      <a href="/" class="font-display text-xl text-solar-blue">EarthSmart Solar</a>
+      <a class="text-sm font-semibold hover:text-texas-gold" href="/contact">Contact</a>
+    </div>
+  </header>
+  <section class="section-padding">
+    <div class="container-shell grid md:grid-cols-2 gap-10 items-start">
+      <div class="space-y-5">
+        <p class="text-sm uppercase tracking-[0.2em] text-texas-gold font-semibold">Texas Campaign</p>
+        <h1 class="font-display text-4xl text-solar-blue">POWER YOUR FREEDOM</h1>
+        <p class="text-steel text-lg">Solar + battery storage for Texans who want control. No spam. No pressure. Just answers.</p>
+        <div class="space-y-3 text-steel">
+          <div class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-texas-gold"></span>Family-owned and Texas-proud.</div>
+          <div class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-texas-gold"></span>Licensed, insured crews that show up.</div>
+          <div class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-texas-gold"></span>Battery designs that keep essentials on.</div>
+        </div>
+        <TrustBar />
+        <p class="text-xs text-steel/80">No spam. No pressure. Just answers.</p>
+      </div>
+      <CampaignForm />
+    </div>
+  </section>
+  <section class="section-padding bg-grid">
+    <div class="container-shell grid md:grid-cols-3 gap-6">
+      {["Store your daytime power","Run essentials during outages","Cut reliance on volatile grid"].map((item) => (
+        <div class="bg-brand-white border border-texas-gold/50 rounded-2xl p-5 shadow-sm" key={item}>
+          <p class="font-display text-xl text-solar-blue">{item}</p>
+          <p class="text-sm text-steel mt-2">Designed around your home, your priorities, and your budget.</p>
+        </div>
+      ))}
+    </div>
+  </section>
+  <section class="section-padding">
+    <div class="container-shell grid md:grid-cols-2 gap-4">
+      {['What does a battery do?','Can I run my whole house?','What happens during an outage?','How long does installation take?','What financing options are available?'].map((q) => (
+        <details class="bg-brand-white rounded-xl border border-texas-gold/40 p-4" key={q}>
+          <summary class="font-semibold text-solar-blue cursor-pointer">{q}</summary>
+          <p class="mt-2 text-sm text-steel">We design for what matters to you: outage resilience, control over usage, and trusted hardware.</p>
+        </details>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
