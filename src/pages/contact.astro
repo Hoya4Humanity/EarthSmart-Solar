@@ -1,15 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SEO from '../components/SEO.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import Section from '../components/Section.astro';
 import IntakeForm from '../components/forms/IntakeForm.astro';
 import ServiceForm from '../components/forms/ServiceForm.astro';
 ---
 <BaseLayout>
   <SEO slot="head" title="Contact EarthSmart Solar" description="Request your solar potential report or service visit." canonical="/contact" />
-  <Header />
   <Section kicker="Talk with the team" title="Request your solar potential report">
     <div class="grid md:grid-cols-2 gap-10 items-start">
       <IntakeForm />
@@ -29,5 +26,4 @@ import ServiceForm from '../components/forms/ServiceForm.astro';
       </div>
     </div>
   </Section>
-  <Footer />
 </BaseLayout>

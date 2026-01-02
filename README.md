@@ -1,6 +1,6 @@
 # EarthSmart Solar — Power Your Freedom
 
-A static-first Astro + Tailwind marketing site for EarthSmart Solar. Built for speed, accessibility, and Texas-tough storytelling.
+A static-first Astro + Tailwind marketing site focused on energy independence, battery storage, and reliability.
 
 ## Development
 
@@ -18,4 +18,6 @@ npm run preview
 
 ## Deploy
 
-Static-first output ready for Netlify, Vercel, or Cloudflare Pages.
+Deployed with GitHub Pages at: https://hoya4humanity.github.io/EarthSmart-Solar/
+
+After the workflow completes, confirm GitHub repo Settings → Pages → Source is set to **GitHub Actions**.

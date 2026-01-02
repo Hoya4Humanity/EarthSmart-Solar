@@ -1,17 +1,18 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SEO from '../components/SEO.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import Hero from '../components/Hero.astro';
 import Section from '../components/Section.astro';
 import FeatureGrid from '../components/FeatureGrid.astro';
 import TrustBar from '../components/TrustBar.astro';
 import CTAButton from '../components/CTAButton.astro';
+
+const site = Astro.site ?? new URL('http://localhost');
+const windmill = new URL('/assets/windmill.svg', site).pathname;
+const battery = new URL('/assets/battery.svg', site).pathname;
 ---
 <BaseLayout>
   <SEO slot="head" />
-  <Header />
   <Hero
     title="POWER YOUR FREEDOM"
     subtitle="Store your power. Keep your home running. Solar + battery storage built for Texas resilience."
@@ -29,12 +30,12 @@ import CTAButton from '../components/CTAButton.astro';
   <Section kicker="Past to future" title="From prairie winds to battery strength">
     <div class="grid md:grid-cols-2 gap-10 items-center">
       <div class="bg-brand-white border border-texas-gold/50 rounded-2xl p-6 shadow-sm">
-        <img src="/assets/windmill.svg" alt="Windmill heritage" class="w-full h-auto" />
+        <img src={windmill} alt="Windmill heritage" class="w-full h-auto" />
         <h3 class="font-display text-2xl text-solar-blue mt-4">Built on heritage</h3>
         <p class="text-steel text-sm mt-2">Pioneer grit meets modern engineering. We honor the craftspeople who made their own power.</p>
       </div>
       <div class="bg-brand-white border border-texas-gold/50 rounded-2xl p-6 shadow-sm">
-        <img src="/assets/battery.svg" alt="Battery independence" class="w-full h-auto" />
+        <img src={battery} alt="Battery independence" class="w-full h-auto" />
         <h3 class="font-display text-2xl text-solar-blue mt-4">Designed for today</h3>
         <p class="text-steel text-sm mt-2">Battery storage keeps your home running and your family protected when the grid falls short.</p>
       </div>
@@ -60,5 +61,4 @@ import CTAButton from '../components/CTAButton.astro';
       <CTAButton href="/contact" variant="secondary">Schedule my report</CTAButton>
     </div>
   </Section>
-  <Footer />
 </BaseLayout>

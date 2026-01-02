@@ -3,13 +3,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SEO from '../components/SEO.astro';
 import CampaignForm from '../components/forms/CampaignForm.astro';
 import TrustBar from '../components/TrustBar.astro';
+
+const site = Astro.site ?? new URL('http://localhost');
 ---
-<BaseLayout>
+<BaseLayout showHeader={false} showFooter={false}>
   <SEO slot="head" title="Texas Solar + Battery Campaign" description="POWER YOUR FREEDOM with EarthSmart Solar. No spam. No pressure. Just answers." canonical="/texas" />
   <header class="bg-brand-white border-b border-texas-gold/40">
     <div class="container-shell flex items-center justify-between py-4">
-      <a href="/" class="font-display text-xl text-solar-blue">EarthSmart Solar</a>
-      <a class="text-sm font-semibold hover:text-texas-gold" href="/contact">Contact</a>
+      <a href={new URL('/', site).pathname} class="font-display text-xl text-solar-blue">EarthSmart Solar</a>
+      <a class="text-sm font-semibold hover:text-texas-gold" href={new URL('/contact', site).pathname}>Contact</a>
     </div>
   </header>
   <section class="section-padding">

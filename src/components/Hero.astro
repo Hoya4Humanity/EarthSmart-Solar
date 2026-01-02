@@ -9,6 +9,9 @@ const {
   secondaryText,
   image = '/assets/solar-knight.svg',
 } = Astro.props;
+
+const site = Astro.site ?? new URL('http://localhost');
+const heroImage = image.startsWith('http') ? image : new URL(image, site).pathname;
 ---
 <section class="section-padding bg-grid">
   <div class="container-shell grid gap-10 md:grid-cols-2 items-center">
@@ -27,7 +30,7 @@ const {
       </div>
     </div>
     <div class="bg-brand-white rounded-3xl border border-texas-gold/50 shadow-lg p-6">
-      <img src={image} alt="Solar knight" class="w-full h-auto" />
+      <img src={heroImage} alt="Solar knight" class="w-full h-auto" />
     </div>
   </div>
 </section>
