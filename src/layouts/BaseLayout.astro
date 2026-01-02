@@ -1,0 +1,24 @@
+---
+import '../styles/global.css';
+const { title = 'EarthSmart Solar | Power Your Freedom', description = 'Solar + battery storage built for energy independence. Store your power. Keep your home running.' } = Astro.props;
+---
+<!doctype html>
+<html lang="en" class="bg-sand text-ink">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bevan&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <slot name="head" />
+  </head>
+  <body class="font-body bg-sand text-ink">
+    <slot />
+  </body>
+</html>

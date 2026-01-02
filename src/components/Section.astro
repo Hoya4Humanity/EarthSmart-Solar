@@ -1,0 +1,10 @@
+---
+const { title, kicker, children, id } = Astro.props;
+---
+<section id={id} class="section-padding">
+  <div class="container-shell">
+    {kicker && <p class="text-sm uppercase tracking-[0.18em] text-texas-gold font-semibold">{kicker}</p>}
+    {title && <h2 class="font-display text-3xl md:text-4xl mt-2 text-solar-blue">{title}</h2>}
+    <div class="mt-6">{children}</div>
+  </div>
+</section>

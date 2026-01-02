@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SEO from '../components/SEO.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Section from '../components/Section.astro';
+import CTAButton from '../components/CTAButton.astro';
+---
+<BaseLayout>
+  <SEO slot="head" title="Solar + Battery | EarthSmart Solar" description="Solar plus storage for resilience, control, and freedom." canonical="/solar-battery" />
+  <Header />
+  <Section kicker="Solar + Storage" title="Resilience without waiting on the grid">
+    <div class="grid md:grid-cols-2 gap-10 items-start">
+      <div class="space-y-4 text-steel">
+        <p>EarthSmart Solar designs solar arrays paired with batteries so you can choose when and how you use your power. Keep essentials on, skip the blackouts, and cut your reliance on utilities.</p>
+        <ul class="space-y-3">
+          <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-texas-gold" aria-hidden="true"></span>Store daytime power and use it at night.</li>
+          <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-texas-gold" aria-hidden="true"></span>Run essentials without a generator hum.</li>
+          <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-texas-gold" aria-hidden="true"></span>Reduce grid dependence and take control of your bill.</li>
+        </ul>
+        <p class="text-xs text-steel/80">Backup capabilities depend on system design.</p>
+        <div class="flex gap-3">
+          <CTAButton href="/contact">Plan my system</CTAButton>
+          <CTAButton href="/why-earthsmart" variant="secondary">Why EarthSmart</CTAButton>
+        </div>
+      </div>
+      <div class="bg-brand-white border border-texas-gold/50 rounded-3xl p-6 shadow-sm">
+        <img src="/assets/solar-knight.svg" alt="Solar and battery illustration" class="w-full h-auto" />
+      </div>
+    </div>
+  </Section>
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,13 @@
+---
+const bullets = ['Family-owned', 'Licensed & insured', '5-star reputation', 'Service that shows up'];
+---
+<div class="flex flex-wrap gap-3">
+  {bullets.map((item) => (
+    <span
+      class="px-4 py-2 rounded-full bg-brand-white border border-texas-gold/60 text-sm text-steel shadow-sm"
+      key={item}
+    >
+      {item}
+    </span>
+  ))}
+</div>

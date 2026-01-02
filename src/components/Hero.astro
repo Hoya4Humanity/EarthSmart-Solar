@@ -1,0 +1,33 @@
+---
+import CTAButton from './CTAButton.astro';
+const {
+  title,
+  subtitle,
+  primaryHref,
+  primaryText,
+  secondaryHref,
+  secondaryText,
+  image = '/assets/solar-knight.svg',
+} = Astro.props;
+---
+<section class="section-padding bg-grid">
+  <div class="container-shell grid gap-10 md:grid-cols-2 items-center">
+    <div class="space-y-6">
+      <p class="text-sm uppercase tracking-[0.2em] text-texas-gold font-semibold">Built for Texas resilience</p>
+      <h1 class="font-display text-4xl md:text-5xl text-solar-blue">{title}</h1>
+      <p class="text-lg text-steel max-w-xl">{subtitle}</p>
+      <div class="flex flex-wrap gap-3">
+        {primaryHref && <CTAButton href={primaryHref}>{primaryText}</CTAButton>}
+        {secondaryHref && <CTAButton href={secondaryHref} variant="secondary">{secondaryText}</CTAButton>}
+      </div>
+      <div class="flex flex-wrap gap-2 text-xs text-steel uppercase tracking-[0.2em]">
+        <span class="px-3 py-1 bg-brand-white border border-texas-gold/50 rounded-full">Energy Independence</span>
+        <span class="px-3 py-1 bg-brand-white border border-texas-gold/50 rounded-full">Outage Protection</span>
+        <span class="px-3 py-1 bg-brand-white border border-texas-gold/50 rounded-full">Family Owned</span>
+      </div>
+    </div>
+    <div class="bg-brand-white rounded-3xl border border-texas-gold/50 shadow-lg p-6">
+      <img src={image} alt="Solar knight" class="w-full h-auto" />
+    </div>
+  </div>
+</section>

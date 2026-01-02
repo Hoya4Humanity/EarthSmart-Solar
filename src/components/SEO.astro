@@ -1,0 +1,24 @@
+---
+const {
+  title = 'EarthSmart Solar | Power Your Freedom',
+  description = 'Solar + battery storage built for energy independence. Store your power. Keep your home running.',
+  canonical,
+  ogImage = '/assets/solar-knight.svg',
+} = Astro.props;
+const url = canonical ?? Astro.url?.toString?.();
+---
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:type" content="website" />
+{url && <meta property="og:url" content={url} />}
+<meta property="og:image" content={ogImage} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+{url && <link rel="canonical" href={url} />}
+<meta name="theme-color" content="#123A66" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />

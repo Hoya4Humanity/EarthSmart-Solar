@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SEO from '../components/SEO.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import FeatureGrid from '../components/FeatureGrid.astro';
+import TrustBar from '../components/TrustBar.astro';
+import CTAButton from '../components/CTAButton.astro';
+---
+<BaseLayout>
+  <SEO slot="head" />
+  <Header />
+  <Hero
+    title="POWER YOUR FREEDOM"
+    subtitle="Store your power. Keep your home running. Solar + battery storage built for Texas resilience."
+    primaryHref="/contact"
+    primaryText="Get Your Solar Potential Report"
+    secondaryHref="/solar-battery"
+    secondaryText="Explore Solar + Battery"
+  />
+  <Section title="The EarthSmart Build">
+    <FeatureGrid />
+  </Section>
+  <Section>
+    <TrustBar />
+  </Section>
+  <Section kicker="Past to future" title="From prairie winds to battery strength">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div class="bg-brand-white border border-texas-gold/50 rounded-2xl p-6 shadow-sm">
+        <img src="/assets/windmill.svg" alt="Windmill heritage" class="w-full h-auto" />
+        <h3 class="font-display text-2xl text-solar-blue mt-4">Built on heritage</h3>
+        <p class="text-steel text-sm mt-2">Pioneer grit meets modern engineering. We honor the craftspeople who made their own power.</p>
+      </div>
+      <div class="bg-brand-white border border-texas-gold/50 rounded-2xl p-6 shadow-sm">
+        <img src="/assets/battery.svg" alt="Battery independence" class="w-full h-auto" />
+        <h3 class="font-display text-2xl text-solar-blue mt-4">Designed for today</h3>
+        <p class="text-steel text-sm mt-2">Battery storage keeps your home running and your family protected when the grid falls short.</p>
+      </div>
+    </div>
+  </Section>
+  <Section title="Questions Texans ask">
+    <div class="grid md:grid-cols-2 gap-4">
+      {['What does a battery do?','Can I run my whole house?','What happens during an outage?','How long does installation take?','What financing options are available?'].map((q) => (
+        <details class="bg-brand-white rounded-xl border border-texas-gold/40 p-4" key={q}>
+          <summary class="font-semibold text-solar-blue cursor-pointer">{q}</summary>
+          <p class="mt-2 text-sm text-steel">We design around your priorities. Batteries store solar energy, power essentials during outages, and can be sized to match your home and budget.</p>
+        </details>
+      ))}
+    </div>
+  </Section>
+  <Section>
+    <div class="bg-solar-blue text-brand-white rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div>
+        <p class="text-sm uppercase tracking-[0.18em] text-sun font-semibold">Ready when you are</p>
+        <h3 class="font-display text-3xl">See what energy independence looks like for you</h3>
+        <p class="text-sand/80 mt-2">Straightforward report, honest options, built the Texas way.</p>
+      </div>
+      <CTAButton href="/contact" variant="secondary">Schedule my report</CTAButton>
+    </div>
+  </Section>
+  <Footer />
+</BaseLayout>
