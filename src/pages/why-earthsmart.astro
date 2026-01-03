@@ -1,14 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SEO from '../components/SEO.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import Section from '../components/Section.astro';
 import CTAButton from '../components/CTAButton.astro';
 ---
 <BaseLayout>
   <SEO slot="head" title="Why EarthSmart | Craftsmanship-first solar" description="Family-owned solar + storage installs with support that shows up." canonical="/why-earthsmart" />
-  <Header />
   <Section kicker="Family owned" title="Texas pride in every install">
     <p class="text-steel max-w-3xl">EarthSmart Solar is family-owned and values-first. We treat every home like our own, with tidy conduit runs, clean wiring, and systems that perform when you need them most.</p>
   </Section>
@@ -53,5 +50,4 @@ import CTAButton from '../components/CTAButton.astro';
       <CTAButton href="/contact" variant="secondary">Talk with the team</CTAButton>
     </div>
   </Section>
-  <Footer />
 </BaseLayout>

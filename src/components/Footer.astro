@@ -1,8 +1,11 @@
+---
+const site = Astro.site ?? new URL('http://localhost');
+---
 <footer class="bg-solar-blue text-brand-white mt-16">
   <div class="container-shell py-10 grid gap-8 md:grid-cols-3">
     <div>
       <p class="font-display text-2xl">Storing your power. Securing your independence.</p>
-      <a class="underline mt-3 inline-block" href="/">EarthSmartSolar.com</a>
+      <a class="underline mt-3 inline-block" href={new URL('/', site).pathname}>EarthSmartSolar.com</a>
     </div>
     <div>
       <p class="font-semibold mb-2">Service Areas</p>

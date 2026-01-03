@@ -1,14 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SEO from '../components/SEO.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import Section from '../components/Section.astro';
 import CTAButton from '../components/CTAButton.astro';
+
+const site = Astro.site ?? new URL('http://localhost');
+const heroImage = new URL('/assets/solar-knight.svg', site).pathname;
 ---
 <BaseLayout>
   <SEO slot="head" title="Solar + Battery | EarthSmart Solar" description="Solar plus storage for resilience, control, and freedom." canonical="/solar-battery" />
-  <Header />
   <Section kicker="Solar + Storage" title="Resilience without waiting on the grid">
     <div class="grid md:grid-cols-2 gap-10 items-start">
       <div class="space-y-4 text-steel">
@@ -25,9 +25,8 @@ import CTAButton from '../components/CTAButton.astro';
         </div>
       </div>
       <div class="bg-brand-white border border-texas-gold/50 rounded-3xl p-6 shadow-sm">
-        <img src="/assets/solar-knight.svg" alt="Solar and battery illustration" class="w-full h-auto" />
+        <img src={heroImage} alt="Solar and battery illustration" class="w-full h-auto" />
       </div>
     </div>
   </Section>
-  <Footer />
 </BaseLayout>
